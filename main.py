@@ -6,7 +6,7 @@ ib = IB()
 ib.connect('127.0.0.1', 4001, clientId=1)
 
 
-def get_data(ticker='SPY', file='default_data.csv', window='1 M', barsize='1 min', num_window=2, end_date='20160802 09:30:00'):
+def get_data(ticker='SPY', file='default_data.csv', window='1 D', barsize='1 min', num_window=2, end_date='20210810 09:30:00'):
 
     contract = Stock(ticker, exchange='SMART', currency='USD')
 
@@ -53,6 +53,8 @@ def get_data(ticker='SPY', file='default_data.csv', window='1 M', barsize='1 min
         print(f'{i+1} / {num_window}')
         print(end_date)
 
+
+
     with open(file, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
 
@@ -63,4 +65,4 @@ def get_data(ticker='SPY', file='default_data.csv', window='1 M', barsize='1 min
 
 
 
-get_data(file='training_data.csv', num_window=120)
+get_data(file='tday.csv', num_window=1)
