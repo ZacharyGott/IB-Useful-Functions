@@ -6,17 +6,9 @@ ib = IB()
 ib.connect('127.0.0.1', 4001, clientId=1)
 
 
-def get_data(ticker='SPY', file='default_data.csv', window='1 M', barsize='1 min', num_window=1, end_date='20220311 09:30:00'):
+def get_data(ticker='SPY', file='default_data.csv', window='1 M', barsize='1 min', num_window=2, end_date='20211018 09:30:00'):
 
     contract = Stock(ticker, exchange='SMART', currency='USD')
-
-    # contract = Contract()
-    # contract.symbol = "ES"
-    # contract.secType = "CONTFUT"
-    # contract.exchange = "GLOBEX"
-    # contract.currency = "USD"
-    # contract.includeExpired = True
-
 
     O = []
     H = []
@@ -73,4 +65,4 @@ def get_data(ticker='SPY', file='default_data.csv', window='1 M', barsize='1 min
 
 
 
-get_data(file='tday.csv', num_window=75, ticker='SPY')
+get_data(file='tday.csv', num_window=36, ticker='VIX')

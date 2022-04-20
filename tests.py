@@ -66,4 +66,4 @@ def remove_afterhours_data_csv(input_file, output_file):
         for i in range(0, len(O)):
             writer.writerow([O[i], H[i], L[i], C[i], D[i]])
 
-remove_afterhours_data_csv('testing_data.csv', 'SPY_1min_Clean_2016-08-02.2021-07-30.csv')
+remove_afterhours_data_csv('tday.csv', 'testing_data.csv')
